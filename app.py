@@ -147,7 +147,7 @@ def sign_pdf_bytes(
 # -------------------------------
 
 st.set_page_config(page_title="PDF Signer", page_icon="✅", layout="centered")
-st.title("PDF Signer (Streamlit)")
+st.title("SALAS SIGNER - Firma PDF con .p12/.pfx ✅")
 
 st.markdown(
     "Sube tu certificado **.p12/.pfx**, introduce la contraseña y selecciona múltiples PDF. "
