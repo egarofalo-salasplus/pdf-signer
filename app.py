@@ -159,7 +159,7 @@ with st.sidebar:
     p12_file = st.file_uploader("subir .p12 / .pfx", type=["p12", "pfx"])
     p12_password = st.text_input("Contraseña", type="password")
 
-    st.header("Obciones de firma")
+    st.header("Opciones de firma")
     visible = st.checkbox(
         "Firma visible (abajo a la derecha, última página)", value=True
     )
@@ -168,12 +168,12 @@ with st.sidebar:
     box_w = st.number_input(
         "Ancho de caja (pt)", min_value=60, max_value=600, value=160
     )
-    box_h = st.number_input("alto de caja(pt)", min_value=30, max_value=400, value=84)
+    box_h = st.number_input("Alto de caja(pt)", min_value=30, max_value=400, value=84)
     margin_right = st.number_input(
         "Margen derecho (pt)", min_value=0, max_value=200, value=24
     )
     margin_bottom = st.number_input(
-        "Margen Izquierod (pt)", min_value=0, max_value=200, value=24
+        "Margen Izquierdo (pt)", min_value=0, max_value=200, value=24
     )
 
     st.subheader("Metadata")
