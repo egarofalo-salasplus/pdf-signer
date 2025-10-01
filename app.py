@@ -155,31 +155,35 @@ st.markdown(
 )
 
 with st.sidebar:
-    st.header("Certificate (.p12 / .pfx)")
-    p12_file = st.file_uploader("Upload .p12 / .pfx", type=["p12", "pfx"])
-    p12_password = st.text_input("Password", type="password")
+    st.header("Certificado (.p12 / .pfx)")
+    p12_file = st.file_uploader("subir .p12 / .pfx", type=["p12", "pfx"])
+    p12_password = st.text_input("Contraseña", type="password")
 
-    st.header("Signature options")
-    visible = st.checkbox("Visible signature (bottom-right, last page)", value=True)
+    st.header("Obciones de firma")
+    visible = st.checkbox(
+        "Firma visible (abajo a la derecha, última página)", value=True
+    )
 
     # Parámetros para caja visible
-    box_w = st.number_input("Box width (pt)", min_value=60, max_value=600, value=160)
-    box_h = st.number_input("Box height (pt)", min_value=30, max_value=400, value=84)
+    box_w = st.number_input(
+        "Ancho de caja (pt)", min_value=60, max_value=600, value=160
+    )
+    box_h = st.number_input("alto de caja(pt)", min_value=30, max_value=400, value=84)
     margin_right = st.number_input(
-        "Right margin (pt)", min_value=0, max_value=200, value=24
+        "Margen derecho (pt)", min_value=0, max_value=200, value=24
     )
     margin_bottom = st.number_input(
-        "Bottom margin (pt)", min_value=0, max_value=200, value=24
+        "Margen Izquierod (pt)", min_value=0, max_value=200, value=24
     )
 
     st.subheader("Metadata")
-    reason = st.text_input("Reason", value="Aprobación de documento")
-    location = st.text_input("Location", value="Sabadell, ES")
-    contact = st.text_input("Contact", value="it@empresa.com")
+    reason = st.text_input("Razón", value="Aprobación de documento")
+    location = st.text_input("Ubicación", value="Sabadell, ES")
+    contact = st.text_input("Contacto", value="it@empresa.com")
 
-st.subheader("Upload PDFs to sign")
+st.subheader("Subir PDF(s) a firmar")
 pdf_files = st.file_uploader(
-    "Select one or more PDF files", type=["pdf"], accept_multiple_files=True
+    "Selecciona uno o más archivos PDF", type=["pdf"], accept_multiple_files=True
 )
 
 if pdf_files:
@@ -188,7 +192,7 @@ if pdf_files:
         st.write(f"📄 {f.name}")
 
 
-run = st.button("Sign PDFs")
+run = st.button("Firmar PDFs")
 
 if run:
     # Validaciones básicas
@@ -235,9 +239,9 @@ if run:
 
                 # Nombre de salida
                 out_name = (
-                    original_name[:-4] + "_signed.pdf"
+                    original_name[:-4] + "_firmado.pdf"
                     if original_name.lower().endswith(".pdf")
-                    else original_name + "_signed.pdf"
+                    else original_name + "_firmado.pdf"
                 )
                 signed_results.append((out_name, signed_bytes))
 
@@ -246,7 +250,7 @@ if run:
             # Botones de descarga individuales
             for out_name, data in signed_results:
                 st.download_button(
-                    label=f"Download {out_name}",
+                    label=f"Descargar {out_name}",
                     data=data,
                     file_name=out_name,
                     mime="application/pdf",
@@ -264,7 +268,7 @@ if run:
                 st.download_button(
                     label="Descargar todo como ZIP",
                     data=mem_zip.getvalue(),
-                    file_name="signed_pdfs.zip",
+                    file_name="pdfs_firmados.zip",
                     mime="application/zip",
                 )
 
