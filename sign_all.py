@@ -107,7 +107,7 @@ def _signature_dict(
         "location": location,
         "signingdate": signing_date,
         "reason": reason,
-        "signature": "Firma Digital: ENZO GAROFALO LANZUISI",  # nombre del campo/entrada
+        "signature": "FIRMA DIGITAL CERIFICADA",
     }
     if visible:
         # Hacer visible la firma en la página indicada
