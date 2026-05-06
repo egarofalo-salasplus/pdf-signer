@@ -44,7 +44,7 @@ def signature_dict(
         "location": location,
         "signingdate": signing_date,
         "reason": reason,
-        "signature": "FIRMA DIGITAL CERTIFICADA",
+        "signature": "Firmado digitalmente por Enzo Garofalo",
     }
     if visible:
         dct["sigpage"] = page_index
